@@ -1,0 +1,162 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Light Cyan: hsl(193, 38%, 86%)
+- Neon Green: hsl(150, 100%, 66%)
+
+### Neutral
+
+- Grayish Blue: hsl(217, 19%, 38%)
+- Dark Grayish Blue: hsl(217, 19%, 24%)
+- Dark Blue: hsl(218, 23%, 16%)
+
+## Typography
+
+### Body Copy
+
+- Font size (quote): 28px
+
+### Font
+
+- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+- Weights: 800 */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --clr-cyan-100: #cee3e9;
+    --clr-cyan-200: #52ffa8;
+    --clr-blue-100: #4e5d73;
+    --clr-blue-200: #323a49;
+    --clr-blue-300: #1f2632;
+
+    --ff-primary: 'Manrope', sans-serif;
+
+    --fs-quote: 28px;
+    --fw-800: 800;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    
+    background-color: var(--clr-blue-300);
+    font-family: var(--ff-primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+.advice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.spinner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: radial-gradient(farthest-side, #52ffa8 94%, #0000) top/9px 9px no-repeat,
+        conic-gradient(#0000 30%, #52ffa8);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+/* .preloader {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--clr-blue-200);
+    background-image: url(./images/icon-dice.svg);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+} */
+
+.card {
+    max-width: 500px;
+    background-color: var(--clr-blue-200);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem 2rem 3rem;
+}
+
+.card h1 {
+    letter-spacing: .3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--clr-cyan-200);
+}
+.card h1>span{
+    letter-spacing: 1.5px;
+    vertical-align:middle;
+    font-size: 2rem;
+    font-weight: var(--fw-800);
+}
+
+.card blockquote {
+    font-size: var(--fs-quote);
+    color: var(--clr-cyan-100);
+    min-height: 30px;
+    margin: 30px 0;
+
+
+
+}
+
+.dice {
+    background-color: var(--clr-cyan-200);
+    height: 3.3rem;
+    width: 3.3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -28px;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+
+}
+.dice:hover{
+    transform: scale(1.2);
+    background-color: #1fc572;
+}
+
+.dice img {
+    width: 2rem;
+
+}
